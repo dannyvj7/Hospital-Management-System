@@ -1,0 +1,46 @@
+hospital_management/
+├── index.php                # Login page
+├── register.php             # Patient registration
+├── dashboard.php            # Admin dashboard
+├── doctor_dashboard.php     # Doctor dashboard
+├── patient_dashboard.php    # Patient dashboard
+├── appointments.php         # Appointment booking & management
+├── manage_patients.php      # Admin CRUD for patients
+├── manage_doctors.php       # Admin CRUD for doctors
+├── edit_patient.php         # Admin edits patient info
+├── logout.php               # Logout script
+│
+├── includes/
+│   ├── db.php               # Database connection
+│   ├── auth.php             # Session control & role checking
+│
+├── assets/
+│   ├── css/style.css        # CSS for forms, tables, dashboards, summary cards
+│   ├── js/script.js         # Optional JS for interactivity
+
+
+
++-----------+        +-----------+        +-------------+
+|   users   |        |  doctors  |        |  patients   |
++-----------+        +-----------+        +-------------+
+| id (PK)   |<----+  | id (PK)  |        | id (PK)     |
+| name      |     |  | user_id  |------->| user_id     |
+| email     |     |  | specialization |  | age         |
+| password  |     |  | phone    |        | gender      |
+| role      |     |  +-----------+        | phone       |
+| created_at|     |                      | address     |
++-----------+     |                      +-------------+
+                  |
+                  |  
+                  +-------------------------------+
+                                                  |
+                                          +---------------+
+                                          | appointments  |
+                                          +---------------+
+                                          | id (PK)       |
+                                          | patient_id    |
+                                          | doctor_id     |
+                                          | appointment_date |
+                                          | status        |
+                                          | created_at    |
+                                          +---------------+
