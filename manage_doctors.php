@@ -146,22 +146,3 @@ if (isset($_GET['search'])) {
 </div>
 </body>
 </html>
-
-
-<!-- ✅ Features
-
-Admin can add new doctors with name, email, phone, password, specialization.
-
-Doctors are inserted into both users (role=doctor) and doctors table.
-
-Admin can search, edit, and delete doctors.
-
-Role-based access ensures only admins can use this page.
-
-Clean professional UI with Font Awesome icons.
-
-💡 Defense Tip
-
-You can explain:
-
-“Doctors cannot self-register. Only the admin can create doctors and assign their specialization. This maintains security and ensures that only authorized personnel have doctor access. All operations, like add, edit, and delete, are logged in the database with proper role-based protection.” -->

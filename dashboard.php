@@ -20,18 +20,15 @@ $appointment_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS 
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard - HMS</title>
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* NEW ADMIN DASHBOARD LAYOUT */
-
+     /* DASHBOARD */
 .layout {
   display: flex;
   width: 100%;
   min-height: 100vh;
   background: #f4f6f9;
 }
-
 
 /* SIDEBAR */
 .sidebar {
@@ -104,6 +101,7 @@ $appointment_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS 
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 30px;
+  color: #009879;
 }
 
 /* DASHBOARD STAT CARDS */
@@ -141,6 +139,29 @@ $appointment_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS 
 .stat-card .info p {
   font-size: 24px;
   font-weight: bold;
+}
+.blue-card {
+  background-color: #4e73df;
+  color: white;
+}
+
+.blue-card .icon i {
+  color: white;
+}
+.green-card {
+  background-color: #1cc88a;
+  color: white;
+}
+
+.green-card .icon i {
+  color: white;
+}
+.red-card {
+  background-color: #e74a3b;
+  color: white;
+}
+.red-card .icon i {
+  color: white;
 }
 
     </style>
@@ -195,7 +216,7 @@ $appointment_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS 
 
         <div class="dashboard-stats">
 
-            <div class="stat-card">
+            <div class="stat-card blue-card">
                 <div class="icon"><i class="fa-solid fa-user-injured"></i></div>
                 <div class="info">
                     <h3>Total Patients</h3>
@@ -203,7 +224,7 @@ $appointment_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS 
                 </div>
             </div>
 
-            <div class="stat-card">
+            <div class="stat-card green-card">
                 <div class="icon"><i class="fa-solid fa-user-doctor"></i></div>
                 <div class="info">
                     <h3>Total Doctors</h3>
@@ -211,7 +232,7 @@ $appointment_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS 
                 </div>
             </div>
 
-            <div class="stat-card">
+            <div class="stat-card red-card">
                 <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
                 <div class="info">
                     <h3>Total Appointments</h3>
@@ -220,6 +241,56 @@ $appointment_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS 
             </div>
 
         </div>
+        
+         <!-- 📊 BAR CHART SECTION -->
+    <br><br>
+    <div style="width: 100%; margin-top: 30px;">
+        <canvas id="summaryChart" style="width:100%; height:300px;"></canvas>
+    </div>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Chart Script -->
+    <script>
+    const chartLabels = ["Patients", "Doctors", "Appointments"];
+
+    const chartData = [
+        <?php echo $patient_count; ?>,
+        <?php echo $doctor_count; ?>,
+        <?php echo $appointment_count; ?>
+    ];
+
+    new Chart("summaryChart", {
+        type: "bar",
+        data: {
+            labels: chartLabels,
+            datasets: [{
+                label: "Hospital Overview",
+                data: chartData,
+                backgroundColor: [
+                    "#4e73df",  // Blue
+                    "#1cc88a",  // Green
+                    "#e74a3b"   // Red
+                ],
+                borderColor: [
+                    "#2e59d9",
+                    "#17a673",
+                    "#be2617"
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+    </script>
+
     </div>
 
 </div>

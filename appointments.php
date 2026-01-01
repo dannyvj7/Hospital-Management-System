@@ -11,9 +11,8 @@ $name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
 
 $appointments = null;
 
-// ========================
+
 // Handle booking (patients only)
-// ========================
 if ($role == 'patient' && isset($_POST['book'])) {
     $doctor_user_id = intval($_POST['doctor_id']); // selected from dropdown
     $date = mysqli_real_escape_string($conn, $_POST['appointment_date']);
@@ -54,9 +53,7 @@ if ($role == 'patient' && isset($_POST['book'])) {
     }
 }
 
-// ========================
 // Function to fetch appointments based on role
-// ========================
 function fetchAppointments($conn, $role, $user_id) {
     if ($role == 'admin') {
         $query = "
@@ -109,14 +106,12 @@ function fetchAppointments($conn, $role, $user_id) {
     return $result;
 }
 
-// ========================
+
 // Fetch current appointments
-// ========================
 $appointments = fetchAppointments($conn, $role, $user_id);
 
-// ========================
 // Admin approve
-// ========================
+
 if ($role == 'admin' && isset($_GET['approve'])) {
     $id = intval($_GET['approve']);
     mysqli_query($conn, "UPDATE appointments SET status='approved' WHERE id='$id' AND status='pending'");
@@ -124,9 +119,7 @@ if ($role == 'admin' && isset($_GET['approve'])) {
     exit();
 }
 
-// ========================
 // Doctor complete
-// ========================
 if ($role == 'doctor' && isset($_GET['complete'])) {
     $id = intval($_GET['complete']);
     mysqli_query($conn, "

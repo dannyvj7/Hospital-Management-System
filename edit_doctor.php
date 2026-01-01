@@ -9,6 +9,7 @@ check_role('admin');
 if (!isset($_GET['id'])) {
     header("Location: manage_doctors.php");
     exit();
+
 }
 
 $id = intval($_GET['id']);
@@ -88,20 +89,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     </div>
 </body>
 </html>
-
-
-
-
-<!-- ✅ Features
-
-Admin can edit doctor name, email, phone, specialization.
-
-Data is fetched dynamically from the database to pre-fill the form.
-
-Updates happen on both users and doctors tables to maintain consistency.
-
-Secure role-based access control ensures only admins can edit.
-
-💡 Defense Tip
-
-“The edit form for doctors works like the patient edit form. Data is dynamically fetched and pre-filled, and all updates are applied to the database securely. Only admins have permission to update doctor information. This ensures data integrity and security in the system.” -->

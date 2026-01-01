@@ -141,29 +141,3 @@ if (isset($_GET['complete'])) {
 </body>
 </html>
 
-
-
-
-<!-- ✅ Features Added
-
-Doctor Dashboard
-
-View only their appointments
-
-Complete approved appointments
-
-Patient Dashboard
-
-View only their appointments
-
-Book new appointments
-
-Role-based Access Control
-
-Admin, doctor, and patient can only access pages meant for their role.
-
-Clean, professional UI using CSS + Font Awesome.
-
-💡 Defense Tip
-
-“Each dashboard shows relevant information based on the user’s role. Doctors see their appointments and can mark them completed. Patients see their appointments and can book new ones. This role-based approach ensures security, data integrity, and a clear workflow.” -->

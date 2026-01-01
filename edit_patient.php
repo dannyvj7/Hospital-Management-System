@@ -102,18 +102,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     </div>
 </body>
 </html>
-
-
-<!-- .
-
-🧠 Defense Explanation
-
-If your lecturer asks:
-
-“How do you handle updating patient data?”
-
-You can confidently say:
-
-“The admin can edit a patient’s information through a secured form. When they open this page, patient data is fetched dynamically from the database and pre-filled. Any changes are updated in both the users and patients tables to maintain synchronization. Role-based access ensures that only admins can perform updates.”
-
-💡 That answer hits both functionality and security, which lecturers love. -->

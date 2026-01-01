@@ -1,0 +1,62 @@
+{
+  "folders": [
+	{
+		"name": "Animation",
+		"path": "../../../Users/DELL/Documents/HTML, CSS AND JAVASCRIPT PROJECTS/Animation"
+	},
+	{
+		"name": "task_management_system",
+		"path": "../task_management_system"
+	},
+	{
+		"name": "login_register",
+		"path": "../login_register"
+	},
+	{
+		"name": "FoodWebsite",
+		"path": "../FoodWebsite"
+	},
+	{
+		"name": "FullStackLoginForm",
+		"path": "../FullStackLoginForm"
+	},
+	{
+		"name": "Foodie",
+		"path": "../../../Users/DELL/Documents/HTML, CSS AND JAVASCRIPT PROJECTS/Foodie"
+	},
+	{
+		"name": "Bro Code JS",
+		"path": "../../../Users/DELL/Documents/HTML, CSS AND JAVASCRIPT PROJECTS/Bro Code JS"
+	},
+	{
+		"name": "Responsive Registration Form",
+		"path": "../../../Users/DELL/Documents/HTML, CSS AND JAVASCRIPT PROJECTS/Responsive Registration Form"
+	},
+	{
+		"name": "E - Commerce website",
+		"path": "../../../Users/DELL/Documents/HTML, CSS AND JAVASCRIPT PROJECTS/E - Commerce website"
+	},
+	{
+		"name": "Todo list",
+		"path": "../../../Users/DELL/Documents/HTML, CSS AND JAVASCRIPT PROJECTS/Todo list"
+	},
+	{
+		"name": "Add To Cart using js",
+		"path": "../../../Users/DELL/Documents/HTML, CSS AND JAVASCRIPT PROJECTS/Add To Cart using js"
+	},
+	{
+		"name": "hospital_management",
+		"path": "."
+	},
+	{
+		"name": "hms",
+		"path": "../Hospital_Management_System_in_PHP/hms"
+	},
+	{
+		"path": "../hospital"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "javascript-course-main"
+  }
+}
